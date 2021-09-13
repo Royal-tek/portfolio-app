@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-4i5k*a)gfv^1_l%0n6@(3m$o(neb3^lr(qx@b2i&=y7cx_ue34
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['royalportfolio.herokuapp.com']
 
 
 # Application definition
@@ -78,10 +79,10 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD' : 'royaljunior',
-        'HOST' : 'localhost',
+        'NAME': 'd4u480hbc8o8vs',
+        'USER': 'bpdqqmuhqwejae',
+        'PASSWORD' : 'e6623dc3562f89d4a10d9f52a1d9aa7f1d048fb16f3b66800284f1bee850697b',
+        'HOST' : 'ec2-3-214-3-162.compute-1.amazonaws.com',
         'PORT' : '5432',        
     }
 }
@@ -127,6 +128,7 @@ STATICFILES_DIRS = BASE_DIR , 'portfolio/static/'
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = BASE_DIR / 'static'
+django_heroku.settings(locals())
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
